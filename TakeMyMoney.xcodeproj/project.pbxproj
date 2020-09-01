@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		DC8098FF24F603D20080372F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8098FE24F603D20080372F /* AppDelegate.swift */; };
 		DC80990124F603D20080372F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC80990024F603D20080372F /* SceneDelegate.swift */; };
-		DC80990324F603D20080372F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC80990224F603D20080372F /* ViewController.swift */; };
 		DC80990624F603D20080372F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC80990424F603D20080372F /* Main.storyboard */; };
 		DC80990824F603D30080372F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC80990724F603D30080372F /* Assets.xcassets */; };
 		DC80990B24F603D30080372F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC80990924F603D30080372F /* LaunchScreen.storyboard */; };
+		DC80991624F6F8710080372F /* PaymentSelectionTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC80991524F6F8710080372F /* PaymentSelectionTableVC.swift */; };
+		DC80991824F6FAA90080372F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC80991724F6FAA90080372F /* RoundedButton.swift */; };
+		DC80992024FDF97D0080372F /* PaymentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC80991F24FDF97D0080372F /* PaymentHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DC8098FB24F603D20080372F /* TakeMyMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeMyMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC8098FE24F603D20080372F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC80990024F603D20080372F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DC80990224F603D20080372F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC80990524F603D20080372F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC80990724F603D30080372F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC80990A24F603D30080372F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC80990C24F603D30080372F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC80991524F6F8710080372F /* PaymentSelectionTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectionTableVC.swift; sourceTree = "<group>"; };
+		DC80991724F6FAA90080372F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		DC80991F24FDF97D0080372F /* PaymentHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		DC8098FD24F603D20080372F /* TakeMyMoney */ = {
 			isa = PBXGroup;
 			children = (
+				DC80991424F6F7F30080372F /* Model */,
+				DC80991324F6F7ED0080372F /* Controller */,
+				DC80991224F6F7E40080372F /* View */,
 				DC8098FE24F603D20080372F /* AppDelegate.swift */,
 				DC80990024F603D20080372F /* SceneDelegate.swift */,
-				DC80990224F603D20080372F /* ViewController.swift */,
 				DC80990424F603D20080372F /* Main.storyboard */,
 				DC80990724F603D30080372F /* Assets.xcassets */,
 				DC80990924F603D30080372F /* LaunchScreen.storyboard */,
 				DC80990C24F603D30080372F /* Info.plist */,
 			);
 			path = TakeMyMoney;
+			sourceTree = "<group>";
+		};
+		DC80991224F6F7E40080372F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC80991724F6FAA90080372F /* RoundedButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DC80991324F6F7ED0080372F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DC80991524F6F8710080372F /* PaymentSelectionTableVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DC80991424F6F7F30080372F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC80991F24FDF97D0080372F /* PaymentHelper.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC80990324F603D20080372F /* ViewController.swift in Sources */,
+				DC80991624F6F8710080372F /* PaymentSelectionTableVC.swift in Sources */,
+				DC80992024FDF97D0080372F /* PaymentHelper.swift in Sources */,
 				DC8098FF24F603D20080372F /* AppDelegate.swift in Sources */,
 				DC80990124F603D20080372F /* SceneDelegate.swift in Sources */,
+				DC80991824F6FAA90080372F /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
