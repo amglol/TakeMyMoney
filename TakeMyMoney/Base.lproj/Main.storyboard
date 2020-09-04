@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WOt-n5-gwF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WOt-n5-gwF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -62,21 +62,27 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="aE9-lZ-dnw">
                                                     <rect key="frame" x="32" y="41.5" width="350" height="37"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfH-bG-wSR">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfH-bG-wSR" customClass="RoundedButton" customModule="TakeMyMoney" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="167.5" height="37"/>
                                                             <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                             <state key="normal" title="Paypal">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="paymentButtonPressed:" destination="zxc-Hx-2YI" eventType="touchUpInside" id="IU7-c8-Jyg"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3f-h8-95l">
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3f-h8-95l" customClass="RoundedButton" customModule="TakeMyMoney" customModuleProvider="target">
                                                             <rect key="frame" x="182.5" y="0.0" width="167.5" height="37"/>
                                                             <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                             <state key="normal" title="Credit">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="paymentButtonPressed:" destination="zxc-Hx-2YI" eventType="touchUpInside" id="los-l1-tNp"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -111,7 +117,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES" textContentType="cc-number"/>
                                                     <connections>
-                                                        <action selector="creditCardTextFieldValueChanged:" destination="zxc-Hx-2YI" eventType="editingChanged" id="n8y-Gg-d6l"/>
+                                                        <action selector="inputFieldValueChanged:" destination="zxc-Hx-2YI" eventType="editingChanged" id="n8y-Gg-d6l"/>
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7E-oI-QNK">
@@ -148,11 +154,17 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad" smartDashesType="yes"/>
+                                                            <connections>
+                                                                <action selector="inputFieldValueChanged:" destination="zxc-Hx-2YI" eventType="editingChanged" id="YPH-3P-s97"/>
+                                                            </connections>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kwm-Tm-h3p">
                                                             <rect key="frame" x="182.5" y="0.0" width="167.5" height="40"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                                            <connections>
+                                                                <action selector="inputFieldValueChanged:" destination="zxc-Hx-2YI" eventType="editingChanged" id="nrM-Ed-y5O"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -209,7 +221,7 @@
                                                         <constraint firstAttribute="height" constant="45" id="XnR-NC-iR0"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -254,7 +266,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKZ-dW-TKv">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKZ-dW-TKv" customClass="RoundedButton" customModule="TakeMyMoney" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="27.5" width="374" height="45"/>
                                                     <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -266,6 +278,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
+                                                        <action selector="proceedToPayment:" destination="zxc-Hx-2YI" eventType="touchUpInside" id="t3H-vf-wL4"/>
                                                         <segue destination="beb-E2-pWX" kind="show" id="IRg-l4-efe"/>
                                                     </connections>
                                                 </button>
@@ -286,8 +299,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Payment Data" id="7FH-rx-JAJ"/>
                     <connections>
+                        <outlet property="creditCardBtnOutlet" destination="B3f-h8-95l" id="G0R-rf-aWS"/>
                         <outlet property="creditCardInputField" destination="1Zw-Q3-kEW" id="LI6-Nl-rj5"/>
                         <outlet property="cvvInputField" destination="kwm-Tm-h3p" id="933-o8-Kpx"/>
+                        <outlet property="nameInputfield" destination="hKh-md-cpw" id="w8K-lg-hFr"/>
+                        <outlet property="paypalBtnOutlet" destination="PfH-bG-wSR" id="XgL-1W-pDO"/>
                         <outlet property="validUntilInputField" destination="RMM-Hh-ASU" id="0DV-aG-G6f"/>
                     </connections>
                 </tableViewController>
